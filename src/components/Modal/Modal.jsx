@@ -5,12 +5,13 @@ import './Modal.css';
 
 
 const Modal = (props) => {
+  const {className='fixed top-0 left-0 w-full h-full flex justify-center items-center overflow-hidden'} = props
   return (
     <Overlay>
-      <div className=' fixed top-0 left-0 w-full h-full flex justify-center items-center overflow-hidden'>
+      <div className={className}>
         <div
           className=' absolute w-full h-full top-0 left-0 opacity-40 bg-black '
-          // onClick={props.toggle} 
+          onClick={props?.toggle} 
         />
         <div className=' z-40 '>
         {props.children}

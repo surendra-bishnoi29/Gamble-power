@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 function SelectValues(props) {
   
-  const {label, items, setSelectedItem, selectedItem} = props;
+  const {label, items, setSelectedItem, selectedItem, disabled} = props;
 
   const handleChange = (event) => {
     setSelectedItem(event.target.value);
@@ -12,6 +12,7 @@ function SelectValues(props) {
     <>
     <div className=' relative w-full'>
       <select value={selectedItem} onChange={handleChange}
+      disabled={disabled}
         className='block px-2.5 pb-2.5 pt-2 w-full text-gray-900 bg-transparent rounded-lg border border-blue-600 placeholder-shown:border-gray-500  dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 hover:border-gray-500 focus:border-blue-600 placeholder-transparent  peer'
       >
         {/* <option value="">Select a financial year</option> */}

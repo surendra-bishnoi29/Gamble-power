@@ -13,7 +13,7 @@ import RedirctWithQuery from "./login/RedirctWithQuery";
 
 function App() {
   // console.log("routes", routes)
-  const {role } = useContext(ContextApp) || "User"
+  const {role } = useContext(ContextApp) || "Public"
  
   const [routes, setRoutes] = useState()
   useEffect(() => {

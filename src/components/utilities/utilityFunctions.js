@@ -8,6 +8,12 @@ export function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
+export function removeQueryParameters(url) {
+  const urlObj = new URL(url);
+  urlObj.search = "";  // Clears the query parameters
+  return urlObj.toString();
+}
+
 
 export const getFileNameFromUrl = (url) => {
     // Parse the URL
@@ -24,7 +30,7 @@ export const getFileNameFromUrl = (url) => {
   };
 
 export const  ensureUrlSafety =(str) => {
-    const sanitizedString = str.replace(/[^a-zA-Z0-9\-_.]/g, '_');
+    const sanitizedString = str.replace(/[^a-zA-Z0-9\-_]/g, '_');
     return sanitizedString;
 }
 

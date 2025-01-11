@@ -1,8 +1,8 @@
 import { deleteApiWrapper, getApiWrapper, postApiWrapper, putApiWrapper } from "./token-wrapper-function";
 
-const base_url = 'http://34.18.95.25'
+const base_url = 'http://127.0.0.1:5000'
 
 export const loginUser = async (credentials) => {
-    const response = await postApiWrapper(`${base_url}/login`, credentials);
+    const response = await postApiWrapper(`${base_url}/api/login`, credentials);
     return response;
 }

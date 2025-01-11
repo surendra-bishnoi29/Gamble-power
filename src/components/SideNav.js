@@ -9,32 +9,40 @@ import Notification from '../Notification'
 import WarningPage from './utilities/WarningPage'
 import blank_img from '../components/utilities/blank.jpg'
 import { classNames } from './utilities/utilityFunctions'
+import ModalLogin from '../login/ModalLogin'
+import Logo from './Logo'
+import SidebarIcon from '../Icons/SidebarIcon'
+import SideBarModalComponent from './SideBarModalComponent'
+import CreateVolunteer from '../Volunteer/CreateVolunteer'
+import Donate from '../Donate'
 
 
 
 function SideNav() {
   const [currentUser, setCurrentUser] = useState({});
-  const { loading, setLoading, role } = useContext(ContextApp);
+  const { loading, setLoading, role, loginModal, setLoginModal, loggedIn, donateModal, setDonateModal, volunteerModal, setVolunteerModal } = useContext(ContextApp);
   const [routes, setRoutes] = useState(appRoutes)
   const [warning, setWarning] = useState(false)
-  useEffect(() => {
-    getUser()
-  }, [])
+  const [sideBarModal, setSideBarModal] = useState(false)
+  // const [loginModal, setLoginModal] = useState(false)
+  // useEffect(() => {
+  //   getUser()
+  // }, [])
 
-  const getUser = async () => {
-    setLoading(true);
-    const response = await getCurrentUser();
-    console.log("current user from side nav", response)
-    if (response?.user) {
-      setCurrentUser(response.user);
-    }
-    if (response?.error) {
-      localStorage.clear();
-      window.location.reload();
-    }
-    setLoading(false);
+  // const getUser = async () => {
+  //   setLoading(true);
+  //   const response = await getCurrentUser();
+  //   console.log("current user from side nav", response)
+  //   if (response?.user) {
+  //     setCurrentUser(response.user);
+  //   }
+  //   if (response?.error) {
+  //     localStorage.clear();
+  //     window.location.reload();
+  //   }
+  //   setLoading(false);
 
-  }
+  // }
 
   const logout = (permitted = false, getWarning = true) => {
     if (getWarning) {
@@ -68,10 +76,12 @@ function SideNav() {
 
   return (
     <>
+      {loginModal && <ModalLogin />}
+     
       <Notification />
       {warning ? <WarningPage targetFunction={getPermissionToLogout} warningMsg={'Are you sure you want to logout ?'} /> : ''}
-      <nav className="bg-transparent   justify-between flex  ">
-        <div className=" flex w-full justify-end gap-10 sm:gap-0 items-center absolute z-10  ">
+      <nav className=" hidden   justify-between  lg:flex  ">
+        <div className=" flex w-full  justify-end sm:gap-0 items-center absolute z-10  ">
           {/* <a href="#" className=' hidden '>
             <img
               src={currentUser?.image == '' ? blank_img : currentUser?.image}
@@ -81,16 +91,22 @@ function SideNav() {
           <div className="">
             <ul className='flex flex-row justify-center sm:flex-row items-center -ml-4 mr-4 mt-2 '>
               {routes.map((route, index) => (
-                <li key={index} className={classNames( route.state =='donate'?' bg-green-400 pr-1 ml-5  rounded-full':'')}>
+                <li key={index} className={classNames(route.state == 'donate' ? ' bg-green-400 pr-1 ml-5  rounded-full' : '')}>
                   <SideBarItem item={route} key={index} />
                 </li>
               )
               )}
             </ul>
           </div>
-          {/* <div className=' sm:hidden'>
-            <UserDropdown logout={() => logout(true)} currentUser={currentUser} />
-          </div> */}
+          {!loggedIn ? <div onClick={() => { setLoginModal(true) }} className='  text-sm mt-2 mr-4 cursor-pointer text-gray-300 hover:text-green-400 '>
+            Login
+            {/* <UserDropdown logout={() => logout(true)} currentUser={currentUser} /> */}
+          </div>
+            :
+            <div onClick={() => { logout() }} className='  text-sm mt-2 mr-4 cursor-pointer text-gray-300 hover:text-green-400 '>
+              logout
+            </div>
+          }
         </div>
 
         {/* <div className="mb-4  hidden sm:flex sm:flex-col justify-center items-center gap-5 border-t border-gray-700 pt-5">
@@ -104,6 +120,22 @@ function SideNav() {
           </a>
         </div> */}
       </nav>
+
+      <div className=' fixed block lg:hidden z-40 w-full bg-slate-50'>
+        <div className=' pl-8 py-2 border-b-2 flex items-center justify-between'>
+          <Logo />
+          <div className=' pr-4'>
+            <div className=' cursor-pointer' onClick={() => setSideBarModal(!sideBarModal)}>
+              <SidebarIcon />
+            </div>
+
+            {sideBarModal && <SideBarModalComponent setSideBarModal={setSideBarModal} sideBarModal={sideBarModal} />}
+
+          </div>
+        </div>
+
+      </div>
+
     </>
   )
 }

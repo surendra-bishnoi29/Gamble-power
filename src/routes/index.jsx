@@ -5,8 +5,8 @@ import appRoutes from "./appRoutes";
 import { getItem } from "../login/storageService";
 // import { RouteType } from "./config";
 
-// const role = getItem('role');
-const role = "Admin"
+const role = getItem('role');
+// const role = "Admin"
 console.log("role", role);
 
 export const generateRoute = (routes) => {
@@ -41,7 +41,7 @@ export const generateRoute = (routes) => {
     )}
   );
 };
-console.log("appRoutes", generateRoute(appRoutes));
+
 export const routes =  generateRoute(appRoutes);
 
 
