@@ -11,6 +11,7 @@ import { loginUser } from '../Actions/loginAction';
 import { setItem } from './storageService';
 import { Toaster, ToastIcon, toast, resolveValue } from "react-hot-toast";
 import Loader from '../components/utilities/Loader';
+import Logo from '../components/Logo';
 
 
 
@@ -22,7 +23,7 @@ export default function Login() {
 
 
     // const [loginState, setLoginState] = useState();
-    const { loggedIn, login, setLoggedIn, currentUser, setCurrentUser, setRole} = useContext(ContextApp);
+    const { loggedIn, login, setLoggedIn, currentUser, setCurrentUser, setRole, loginModal, setLoginModal} = useContext(ContextApp);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
@@ -55,15 +56,17 @@ export default function Login() {
                 setItem('loggedIn', true);
                 setLoggedIn(true);
                 console.log("again i am here");
-                
-                if (response?.role === 'Admin') {
-                    setRole('Admin');
-                    console.log("admin");
-                    navigate('/');
-                } else {
-                    setRole('User');
-                    navigate('/files');
-                }
+                setRole(response?.role)
+                setLoginModal(false)
+                // if (response?.role === 'Admin') {
+                //     setRole('Admin');
+                //     console.log("admin");
+                //     navigate('/');
+                // } else {
+                //     setRole('User');
+                //     // navigate('/files');
+                //     navigate('/');
+                // }
             } else if (response?.error) {
                 notification(`Login failed: ${response?.error}`, 'error');
             } else {
@@ -86,14 +89,15 @@ export default function Login() {
             <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
                 <div class="w-full bg-gray-100  flex flex-col items-center justify-center py-8 px-4">
 
-                    {/* <Logo text=' ' text2=" "  /> */}
-                    <div className=''>
+                    {/* <div className=' text-[32px] font-bold'><span className=' text-blue-400'>जल</span><span className=' text-green-700'>जीवनम्</span></div> */}
+                    <Logo />
+                    {/* <div className=''>
                     <div className=' flex items-center ml-10'>
                     <img src= 'y71logo.svg' />
                     <div class=" h-10 border-l-2 border-gray-400"></div>
                     <img className=' w-28 h-10' src= 's+.png' />
                     </div>
-                    </div>
+                    </div> */}
                     <div class="max-w-md w-full p-6">
 
                         <div class="text-2xl font-semibold mb-6 text-black text-center">Login to Your Account</div>

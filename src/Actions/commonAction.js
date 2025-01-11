@@ -6,7 +6,9 @@ const helpers = {
           headers: {
             'Content-Type': 'application/json',
             Authorization: 'Token ' + Token,
+            'X-Tenant-ID' : window.location.hostname
           },
+
         });
         return await data.json();
       } catch (error) {
@@ -25,6 +27,8 @@ const helpers = {
         if (Token) {
           headers.Authorization = 'Token ' + Token;
         }
+
+        headers['X-Tenant-ID'] = window.location.hostname
   
         const DATA = await fetch(url, {
           method: 'POST',
@@ -48,6 +52,7 @@ const helpers = {
         if (Token) {
           headers.Authorization = 'Token ' + Token;
         }
+        headers['X-Tenant-ID'] = window.location.hostname
   
         const DATA = await fetch(url, {
           method: 'PUT',
@@ -66,12 +71,18 @@ const helpers = {
   
     httpDelete: async function (url, Token) {
       try {
+        const headers = {
+          'Content-Type': 'application/json',
+        };
+  
+        if (Token) {
+          headers.Authorization = 'Token ' + Token;
+        }
+        headers['X-Tenant-ID'] = window.location.hostname
+  
         const DATA = await fetch(url, {
           method: 'DELETE',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: 'Token ' + Token,
-          },
+          headers: headers,
         });
        
         return await DATA.json();

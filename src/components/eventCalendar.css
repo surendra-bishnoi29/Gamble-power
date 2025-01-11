@@ -1,0 +1,62 @@
+
+:root {
+    --fc-small-font-size: 0.85em;
+    --fc-page-bg-color: #fff;
+    --fc-neutral-bg-color: hsla(0, 0%, 82%, .3);
+    --fc-neutral-text-color: grey;
+    --fc-border-color: #ddd;
+    --fc-button-text-color: #fff;
+    --fc-button-bg-color: #129341; /* Change this to your desired button color */
+    --fc-button-border-color: #2c3e50; /* Button border color */
+    --fc-button-hover-bg-color: #237908; /* Change this to your desired hover color */
+    --fc-button-hover-border-color: #1a252f;
+    --fc-button-active-bg-color: #1f5b92;
+    --fc-button-active-border-color: #151e27;
+    --fc-event-bg-color: #3788d8;
+    --fc-event-border-color: #3788d8;
+    --fc-event-text-color: #fff;
+    --fc-event-selected-overlay-color: rgba(0, 0, 0, 0.25);
+    --fc-more-link-bg-color: #d0d0d0;
+    --fc-more-link-text-color: inherit;
+    --fc-event-resizer-thickness: 8px;
+    --fc-event-resizer-dot-total-width: 8px;
+    --fc-event-resizer-dot-border-width: 1px;
+    --fc-non-business-color: hsla(0, 0%, 84%, .3);
+  }
+  
+
+
+.fc .fc-button-primary:not(:disabled).fc-button-active, .fc .fc-button-primary:not(:disabled):active {
+    background-color: #04731a;
+    outline: none;
+    box-shadow: none !important;
+
+    /* border-color: var(--fc-button-active-border-color);
+    color: var(--fc-button-text-color); */
+}
+
+
+
+.fc-button{
+    outline: none;
+    border: none; 
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.fc .fc-button-primary {
+    background-color: #49a526;
+    border-color: var(--fc-button-border-color);
+    color: var(--fc-button-text-color);
+    border: 0px solid transparent;
+    outline: none;
+    box-shadow: none !important;
+
+}
+
+button{
+   outline: none;
+   border: none; 
+   box-shadow: none !important;
+
+}

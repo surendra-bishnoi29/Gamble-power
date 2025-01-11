@@ -9,17 +9,23 @@ import About from "../components/About";
 import Events from "../components/Events";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
+import HomeIcon from "../Icons/HomeIcon";
+import InfoIcon from "../Icons/InfoIcon";
+import SquareIcon from "../Icons/SquareIcon";
+import CalendarIcon from "../Icons/CalendarIcon";
+import ContactUsIcon from "../Icons/ContactUsIcon";
 
 const appRoutes = [
   {
     path: "/",
     index:true,
     element: <Home />,
-    state: "users",
-    role: ["Admin", "User"],
+    state: "Home",
+    role: ["Admin", "Public", "Head-Volunteer"],
     sidebarProps: {
-      displayText: "User",
-      icon: <div>Home</div>
+      displayText: "Home",
+      icon: <div>Home</div>,
+      sidebarIcon : <HomeIcon className={'size-5'}/>
     }
   },
   // {
@@ -36,45 +42,49 @@ const appRoutes = [
  {
     path: "/about",
     index:true,
-    role:['User', 'Admin'],
+    role:['Public', 'Admin',"Head-Volunteer"],
     element: <About/>,
     state: "organisations",
     sidebarProps: {
       displayText: "organisation",
-      icon: <div>About Us</div>
+      icon: <div>About Us</div>,
+      sidebarIcon : <InfoIcon className={'size-5'}/>
     }
   },
   {
     path: "/projects",
     index:true,
-    role:['User', 'Admin'],
+    role:['Public', 'Admin', "Head-Volunteer"],
     element: <Projects/>,
     state: "projects",
     sidebarProps: {
       displayText: "projects",
-      icon: <div>Projects</div>
+      icon: <div>Projects</div>,
+      sidebarIcon : <SquareIcon className={'size-5'} />
     }
   },
   {
     path: "/events",
     index:true,
-    role:['User', 'Admin'],
+    role:['Public', 'Admin', "Head-Volunteer"],
     element: <Events/>,
     state: "events",
     sidebarProps: {
       displayText: "events",
-      icon: <div>Events</div>
+      icon: <div>Events</div>,
+      sidebarIcon : <CalendarIcon className={'size-5'} />
     }
   },
   {
     path: "/contact-us",
     index:true,
-    role:['User', 'Admin'],
+    role:['Public', 'Admin', "Head-Volunteer"],
     element: <Contact/>,
     state: "contact-us",
     sidebarProps: {
       displayText: "contact-us",
-      icon: <div>Contact Us</div>
+      icon: <div>Contact Us</div>,
+      sidebarIcon : <ContactUsIcon className={'size-5'}/>
     }
   },
 
