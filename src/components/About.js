@@ -10,6 +10,9 @@ import { ContextApp } from '../ContextAPI'
 import { Outlet, useNavigate } from 'react-router-dom'
 import VolunteerList from '../Volunteer';
 import VolunteerRequestList from '../Volunteer/VolunteerRequestList';
+import { getProjectById, getProjects } from '../Actions/projectActions';
+import { Toaster, ToastIcon, toast, resolveValue } from "react-hot-toast";
+import { getVolunteers } from '../Actions/volunteerActions';
 // import Carousel from './carousel'
 
 function About() {
@@ -20,7 +23,9 @@ function About() {
 
  const [listReload, setListReload] = useState(false)
  const [rolelistReload, setRoleListReload] = useState(false)
- 
+
+ const [totalProjectCount, setTotalProjectCount] = useState(0)
+ const [totalVolunteerCount, setTotalVolunteerCount] = useState(0)
 
 
  useEffect(()=>{
@@ -31,6 +36,36 @@ function About() {
   }, 500)
  },[role])
 
+ useEffect(()=>{
+    getAllProjects()
+    getAllVolunteers()
+ },[])
+
+
+ const getAllProjects = async() =>{
+  const res  = await getProjects()
+  if (res?.status){
+    const k = res?.projects?.length
+    setTotalProjectCount(k)
+
+  }else{
+    notification("Something went wrong : projects", 'error')
+  }
+
+ }
+
+ const getAllVolunteers = async() =>{
+  const res  = await getVolunteers()
+  if (res?.status){
+    const k = res?.volunteers?.length
+    setTotalVolunteerCount(k)
+
+  }else{
+    notification("Something went wrong : Volunteer", 'error')
+  }
+
+ }
+
   const features = [
     { number: '01', title: 'Pond Protection', icon: <HeartIcon />, heading: 'Pond Protection', text: 'Protect and restore ponds by ensuring cleanliness and preventing encroachments.' },
     { number: '02', title: 'HEALING', icon:  <LeafIcon />, heading: 'Green Initiatives ', text: 'Promote greenery through tree plantations and sustainable care efforts.' },
@@ -39,8 +74,8 @@ function About() {
   ];
 
   const informations = [
-    { number: '150', icon: <HeartIcon />, text: 'Successful Projects' },
-    { number: '76', icon: <PersonAddIcon />, text: 'Volunteer Reached' }
+    { number: totalProjectCount, icon: <HeartIcon className='size-10' />, text: 'Successful Projects' },
+    { number: totalVolunteerCount, icon: <PersonAddIcon  className='size-11' />, text: 'Volunteer Reached' }
   ]
 
   const volunteers = [
@@ -62,6 +97,11 @@ function About() {
    navigate('/contact-us#add-volunteer')
 
   }
+
+   const notification = (msg, type) => {
+      toast[type](msg);
+    }
+  
 
   return (
     <div>
@@ -125,7 +165,7 @@ function About() {
                       </div>
                     </div>
                     <div className='mt-[8px]'>
-                      <HeartIcon className='size-10' />
+                      {information.icon}
                     </div>
                   </div>
                 )
