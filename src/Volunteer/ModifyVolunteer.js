@@ -162,13 +162,13 @@ const ModifyVolunteer = (props) => {
         
        
         const sendUser = {
-            name: name.trim(),
-            mobile: mobile.trim(),
-            email: email.trim(),
-            address: address.trim(),
+            name: name?.trim(),
+            mobile: mobile?.trim(),
+            email: email?.trim(),
+            address: address?.trim(),
             // city: city.trim(),
-            password: password.trim(),
-            role: role.trim(),
+            password: password?.trim(),
+            role: role?.trim(),
             // clientType: clientType.trim(),
             // state: state.trim(),
             // district: district.trim(),
