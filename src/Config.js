@@ -1,7 +1,7 @@
 export const config ={
         'universal_references':{
             'phone_number': 9834498615,
-            'email' : 'info@giving.com',
+            'email' : 'contact@gamblepower.in',
             'instagram' : 'https://instagram.com',
             'facebook' : 'https://facebook.com',
             'twitter' : 'https://x.com',

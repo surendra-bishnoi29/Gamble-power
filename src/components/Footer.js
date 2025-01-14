@@ -1,9 +1,12 @@
 import React from 'react';
 import Logo from './Logo';
 import SocialMedia from './SocialMedia';
+import { useNavigate } from 'react-router-dom'
 
 
 const Footer = () => {
+
+    const navigate = useNavigate();
 
     const exploreLinks = [
         {
@@ -12,21 +15,26 @@ const Footer = () => {
         },
         {
             title: 'About Us',
-            link: '/about',
+            link: '#about',
         },
-        {
-            title: 'Projects',
-            link: '/projects',
-        },
-        {
-            title: 'Events',
-            link: '/events',
-        },
+        // {
+        //     title: 'Projects',
+        //     link: '/projects',
+        // },
+        // {
+        //     title: 'Events',
+        //     link: '/events',
+        // },
         {
             title: 'Contact Us',
-            link: '/contact-us',
+            link: '#contact',
         },
     ]
+
+
+    const gotoRoutes = (link) => {
+        navigate(link)
+    }
 
     return (
         <footer className=" relative bg-gray-900 bg-opacity-40  text-gray-300 text-sm  ">
@@ -38,13 +46,18 @@ const Footer = () => {
                         <div className="flex justify-center md:justify-start items-center mb-4">
                             {/* <Heart className="text-red-500 mr-2" /> */}
                             {/* <span className="text-white text-xl font-bold">JAL JIVANAM</span> */}
-                            <Logo />
+                            <div className='flex justify-center items-center gap-1'>
+                                <Logo className='w-14 h-14' />
+                                <div className=' font-bold text-white text-3xl'>
+                                    Gamble Power
+                                </div>
+                            </div>
                         </div>
                         <p className="text-sm mb-4 ">
-                        Join us in restoring natural water sources, ensuring clean and accessible water for communities in need. Your support matters!
+                            Gamble Power is a leading provider of solar energy solutions, dedicated to empowering individuals and businesses with clean, renewable energy. We believe in the power of solar energy to transform lives and communities.
                         </p>
-                        <button className="text-yellow-500 flex items-center">
-                            <a href={'/about'}>  Read More <span className="ml-1">&gt;</span> </a>
+                        <button className="text-yellow-500  flex items-center">
+                            <div className='cursor-pointer' onClick={() => gotoRoutes('#about')}>  Read More <span className="ml-1">&gt;</span> </div>
                         </button>
                     </div>
 
@@ -54,9 +67,9 @@ const Footer = () => {
                         <ul className="space-y-2">
                             {exploreLinks.map((item) => (
                                 <li key={item.title}>
-                                    <a href={item.link} className="hover:text-white transition-colors duration-300">
+                                    <div onClick={() => gotoRoutes(item.link)} className="hover:text-white cursor-pointer transition-all duration-300">
                                         {item.title}
-                                    </a>
+                                    </div>
                                 </li>
                             ))}
                         </ul>
@@ -79,18 +92,18 @@ const Footer = () => {
                     {/* Subscribe */}
                     <div className="col-span-1 w-full sm:flex sm:justify-evenly sm:items-center  md:block">
                         <div>
-                        <h3 className="text-white text-lg font-semibold mb-4">Subscribe</h3>
-                        <div className="flex mb-4">
-                            <input
-                                type="email"
-                                placeholder="Enter Your Email Address"
-                                className="bg-gray-800 border-0 outline-none text-white px-4 py-2 rounded-l-md flex-grow"
-                            />
-                            <button className="bg-green-500 text-white px-4 py-2 rounded-r-md">
-                                {/* <Mail size={20} /> */}
-                                <svg xmlns="http://www.w3.org/2000/svg" className='size-6' viewBox="0 0 512 512"><path fill="#ffffff" d="M64 112c-8.8 0-16 7.2-16 16l0 22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1l0-22.1c0-8.8-7.2-16-16-16L64 112zM48 212.2L48 384c0 8.8 7.2 16 16 16l384 0c8.8 0 16-7.2 16-16l0-171.8L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64l384 0c35.3 0 64 28.7 64 64l0 256c0 35.3-28.7 64-64 64L64 448c-35.3 0-64-28.7-64-64L0 128z" /></svg>
-                            </button>
-                        </div>
+                            <h3 className="text-white text-lg font-semibold mb-4">Subscribe</h3>
+                            <div className="flex mb-4">
+                                <input
+                                    type="email"
+                                    placeholder="Enter Your Email Address"
+                                    className="bg-gray-800 border-0 outline-none text-white px-4 py-2 rounded-l-md flex-grow"
+                                />
+                                <button className="bg-green-500 text-white px-4 py-2 rounded-r-md">
+                                    {/* <Mail size={20} /> */}
+                                    <svg xmlns="http://www.w3.org/2000/svg" className='size-6' viewBox="0 0 512 512"><path fill="#ffffff" d="M64 112c-8.8 0-16 7.2-16 16l0 22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1l0-22.1c0-8.8-7.2-16-16-16L64 112zM48 212.2L48 384c0 8.8 7.2 16 16 16l384 0c8.8 0 16-7.2 16-16l0-171.8L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64l384 0c35.3 0 64 28.7 64 64l0 256c0 35.3-28.7 64-64 64L64 448c-35.3 0-64-28.7-64-64L0 128z" /></svg>
+                                </button>
+                            </div>
                         </div>
                         <div className=' sm:block hidden'>
                             <p className="text-sm mb-6">Get latest updates.</p>
@@ -118,7 +131,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="mt-2 mb-5 py-4 border-t border-gray-800 text-center text-sm ">
-                © 2024 HPA
+                © 2025 Gamble Power,  All rights reserved.
             </div>
         </footer>
     );

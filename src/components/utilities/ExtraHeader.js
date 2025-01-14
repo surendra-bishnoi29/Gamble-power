@@ -13,11 +13,11 @@ function ExtraHeader() {
         setDonateModal(true)
     }
     return (
-        <div className=' w-full relative my-4'>
-            <div className=' flex justify-evenly'>
-                <div>
+        <div className=' w-full relative py-2 bg-black'>
+            <div className=' flex mx-2'>
+                {/* <div>
                     <Logo />
-                </div>
+                </div> */}
                 {/* <div id='social-media-icons' className=' ml-[25px] flex justify-center items-center gap-2 left-5 '>
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" className='size-6' viewBox="0 0 512 512"><path fill="#1053c6" d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z" /></svg>
@@ -34,7 +34,7 @@ function ExtraHeader() {
                     </span>
                 </div> */}
                 <SocialMedia />
-                <div className=' flex gap-10 items-center'>
+                {/* <div className=' flex gap-10 items-center'>
 
                     <div className=' flex gap-1 items-center'>
                         <span>
@@ -63,7 +63,7 @@ function ExtraHeader() {
                             Donate
                         </span>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     )

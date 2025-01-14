@@ -15,10 +15,14 @@ import SidebarIcon from '../Icons/SidebarIcon'
 import SideBarModalComponent from './SideBarModalComponent'
 import CreateVolunteer from '../Volunteer/CreateVolunteer'
 import Donate from '../Donate'
+import { useNavigate } from 'react-router-dom'
 
 
 
 function SideNav() {
+
+  const navigate = useNavigate();
+
   const [currentUser, setCurrentUser] = useState({});
   const { loading, setLoading, role, loginModal, setLoginModal, loggedIn, donateModal, setDonateModal, volunteerModal, setVolunteerModal } = useContext(ContextApp);
   const [routes, setRoutes] = useState(appRoutes)
@@ -74,22 +78,51 @@ function SideNav() {
     console.log("role in side nav", role)
   }, [role])
 
+
+  const gotoContact = () => {
+    navigate('#contact')
+  }
+
   return (
     <>
       {loginModal && <ModalLogin />}
-     
+
       <Notification />
       {warning ? <WarningPage targetFunction={getPermissionToLogout} warningMsg={'Are you sure you want to logout ?'} /> : ''}
-      <nav className=" hidden   justify-between  lg:flex  ">
-        <div className=" flex w-full  justify-end sm:gap-0 items-center absolute z-10  ">
+      <nav className=" hidden   justify-between w-full  lg:flex  ">
+
+        {/* <div className=" flex w-full   justify-between sm:gap-0 items-center absolute z-20 mt-4 px-10">
+          <div className='flex justify-center items-center gap-1'>
+            <Logo className='w-14 h-14' />
+            <div className=' font-bold text-white text-3xl'>
+              Gamble Power
+            </div>
+          </div>
+          <div className=' z-50'>
+            <button className="bg-white z-10 cursor-pointer text-black font-medium py-2 px-6 rounded-full mt-1 shadow-md hover:bg-green-500 transition duration-300">
+              Contact Us
+            </button>
+
+          </div>
+        </div> */}
+
+        <div className=" flex w-full  justify-between sm:gap-0 items-center absolute z-10 px-10 mt-6 ">
+          <div className='flex justify-center items-center gap-1'>
+            <Logo className='w-14 h-14' />
+            <div className=' font-bold text-white text-3xl'>
+              Gamble Power
+            </div>
+          </div>
           {/* <a href="#" className=' hidden '>
             <img
               src={currentUser?.image == '' ? blank_img : currentUser?.image}
               className="rounded-full w-10 h-10 mb-3 mx-auto"
             />
           </a> */}
-          <div className="">
-            <ul className='flex flex-row justify-center sm:flex-row items-center -ml-4 mr-4 mt-2 '>
+
+
+          <div className="-pl-16 ">
+            <ul className='flex flex-row justify-center sm:flex-row items-center -ml-4 mr-4  '>
               {routes.map((route, index) => (
                 <li key={index} className={classNames(route.state == 'donate' ? ' bg-green-400 pr-1 ml-5  rounded-full' : '')}>
                   <SideBarItem item={route} key={index} />
@@ -98,15 +131,22 @@ function SideNav() {
               )}
             </ul>
           </div>
-          {!loggedIn ? <div onClick={() => { setLoginModal(true) }} className='  text-sm mt-2 mr-4 cursor-pointer text-gray-300 hover:text-green-400 '>
+
+          <div onClick={gotoContact} className=' '>
+            <button className="bg-white z-10 cursor-pointer text-black font-medium py-2 px-6 rounded-full mt-1 shadow-md hover:bg-green-500 transition duration-300">
+              Contact Us
+            </button>
+
+          </div>
+          {/* {!loggedIn ? <div onClick={() => { setLoginModal(true) }} className='  text-sm mt-2 mr-4 cursor-pointer text-gray-300 hover:text-green-400 '>
             Login
-            {/* <UserDropdown logout={() => logout(true)} currentUser={currentUser} /> */}
+            
           </div>
             :
             <div onClick={() => { logout() }} className='  text-sm mt-2 mr-4 cursor-pointer text-gray-300 hover:text-green-400 '>
               logout
             </div>
-          }
+          } */}
         </div>
 
         {/* <div className="mb-4  hidden sm:flex sm:flex-col justify-center items-center gap-5 border-t border-gray-700 pt-5">

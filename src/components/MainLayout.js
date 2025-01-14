@@ -57,7 +57,7 @@ function MainLayout(props) {
       <div className=' w-full h-full  '>
 
         {/* <div className=' w-full h-[20px] bg-gray-100  absolute -z-1'></div> */}
-        <div className=' z-10 lg:block hidden'><ExtraHeader /> </div>
+        {/* <div className=' z-10 lg:block hidden'><ExtraHeader /> </div> */}
         <SideNav />
         {/* <Header/> */}
         <div className='w-full overflow-auto'>

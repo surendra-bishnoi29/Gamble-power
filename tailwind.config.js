@@ -5,8 +5,19 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        blue: {
+          12: 'rgba(59, 130, 246, 0.12)', // Add your custom blue/12
+        },
+      },
+      fontFamily: {
+        roboto: ['Roboto', 'sans-serif'],
+        opensans: ['"Open Sans"', 'sans-serif'],
+        custom: ['MyCustomFont', 'serif'],
+    },
       animation: {
         blob: "blob 7s infinite",
+        ["infinite-slider"]: "infiniteSlider 20s linear infinite",
       },
       keyframes: {
         blob: {
@@ -21,6 +32,12 @@ module.exports = {
           },
           "100%": {
             transform: "tranlate(0px, 0px) scale(1)",
+          },
+        },
+        infiniteSlider: {
+          "0%": { transform: "translateX(0)" },
+          "100%": {
+            transform: "translateX(calc(-250px * 5))",
           },
         },
       },
