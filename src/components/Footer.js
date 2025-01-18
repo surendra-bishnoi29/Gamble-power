@@ -38,7 +38,7 @@ const Footer = () => {
 
     return (
         <footer className=" relative bg-gray-900 bg-opacity-40  text-gray-300 text-sm  ">
-            <img className=' object-cover absolute w-full h-full -z-10' src='footer.jpg' />
+            <img className=' object-cover absolute w-full h-full -z-10' src='https://jaljivnam.s3.ap-south-1.amazonaws.com/gamble-dump/public/footer.jpg' />
             <div className="container mx-auto px-4 pt-12 flex justify-center items-center">
                 <div className="grid grid-cols-1 w-[1000px] lg:grid-cols-3 md:grid-cols-2 gap-8 justify-items-center items-center ">
                     {/* Logo and Description */}

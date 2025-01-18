@@ -9,7 +9,7 @@ const ValueCard = (props) => {
       <div className="relative h-40">
         <img
           className="absolute w-full h-full object-cover"
-          src="badal.png"
+          src="https://jaljivnam.s3.ap-south-1.amazonaws.com/gamble-dump/public/badal.png"
           alt="Background"
         />
         {/* Gradient Overlay for Fade Effect */}
