@@ -6,7 +6,7 @@ const AlternativeEnergyCard = () => {
       {/* Image Section */}
       <div className="flex-shrink-0 w-full sm:w-auto mb-4 sm:mb-0">
         <img
-          src="alt.jpg"
+          src="https://jaljivnam.s3.ap-south-1.amazonaws.com/gamble-dump/public/alt.jpg"
           alt="Solar Energy"
           className="rounded-lg w-full sm:w-[120px] md:w-[150px] h-[200px] sm:h-[120px] md:h-[150px] object-cover"
         />

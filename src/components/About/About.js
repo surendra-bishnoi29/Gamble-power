@@ -79,7 +79,7 @@ function About() {
                     <div className='w-full sm:w-[80%] sm:max-w-full max-w-[400px] lg:w-auto'>
                         <img 
                             className='object-cover w-full sm:w-[418px] h-[300px]  sm:h-[500px] rounded-2xl' 
-                            src='about-stand.jpg'
+                            src='https://jaljivnam.s3.ap-south-1.amazonaws.com/gamble-dump/public/about-stand.jpg'
                             alt="About Gamble Power"
                         />
                     </div>

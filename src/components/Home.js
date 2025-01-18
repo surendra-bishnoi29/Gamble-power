@@ -73,7 +73,7 @@ function Home() {
         loop
         className="w-full min-h-[1000px] h-screen object-cover -z-10"
       >
-        <source src="home.mov" type="video/mp4" />
+        <source src="https://jaljivnam.s3.ap-south-1.amazonaws.com/gamble-dump/public/home.mov" type="video/mp4" />
       </video>
 
       {/* Content Sections */}
