@@ -53,7 +53,7 @@ function App() {
            {routes}
           </Route>
           {/* <Route path="/login" element={<LoginPage />}></Route> */}
-          {/* <Route path="*" element={<RedirctWithQuery/>}></Route> */}
+          <Route path="*" element={<RedirctWithQuery/>}></Route>
         </Routes>
 
       </BrowserRouter>

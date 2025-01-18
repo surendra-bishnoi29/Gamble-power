@@ -89,7 +89,7 @@ function SideNav() {
 
       <Notification />
       {warning ? <WarningPage targetFunction={getPermissionToLogout} warningMsg={'Are you sure you want to logout ?'} /> : ''}
-      <nav className=" hidden   justify-between w-full  lg:flex  ">
+      <nav className="    justify-between w-full  flex  ">
 
         {/* <div className=" flex w-full   justify-between sm:gap-0 items-center absolute z-20 mt-4 px-10">
           <div className='flex justify-center items-center gap-1'>
@@ -108,8 +108,8 @@ function SideNav() {
 
         <div className=" flex w-full  justify-between sm:gap-0 items-center absolute z-10 px-10 mt-6 ">
           <div className='flex justify-center items-center gap-1'>
-            <Logo className='w-14 h-14' />
-            <div className=' font-bold text-white text-3xl'>
+            <Logo className='sm:w-14 sm:h-14 w-10 h-10' />
+            <div className=' font-bold text-white text-xl sm:text-3xl'>
               Gamble Power
             </div>
           </div>
@@ -122,7 +122,7 @@ function SideNav() {
 
 
           <div className="-pl-16 ">
-            <ul className='flex flex-row justify-center sm:flex-row items-center -ml-4 mr-4  '>
+            <ul className='lg:flex hidden flex-row justify-center  items-center -ml-4 mr-4  '>
               {routes.map((route, index) => (
                 <li key={index} className={classNames(route.state == 'donate' ? ' bg-green-400 pr-1 ml-5  rounded-full' : '')}>
                   <SideBarItem item={route} key={index} />
@@ -132,11 +132,20 @@ function SideNav() {
             </ul>
           </div>
 
-          <div onClick={gotoContact} className=' '>
-            <button className="bg-white z-10 cursor-pointer text-black font-medium py-2 px-6 rounded-full mt-1 shadow-md hover:bg-green-500 transition duration-300">
-              Contact Us
-            </button>
+          <div className=' flex justify-center items-center gap-5'>
+            <div onClick={gotoContact} className=' sm:block hidden'>
+              <button className="bg-white z-10 cursor-pointer text-black font-medium py-2 px-6 rounded-full mt-1 shadow-md hover:text-white hover:bg-green-500 transition duration-300">
+                Contact Us
+              </button>
+            </div>
+            <div className=' mt-2 lg:hidden block '>
+              <div className=' cursor-pointer text-white' onClick={() => setSideBarModal(!sideBarModal)}>
+                <SidebarIcon className='size-6 sm:size-10' />
+              </div>
 
+              {sideBarModal && <SideBarModalComponent setSideBarModal={setSideBarModal} sideBarModal={sideBarModal} />}
+
+            </div>
           </div>
           {/* {!loggedIn ? <div onClick={() => { setLoginModal(true) }} className='  text-sm mt-2 mr-4 cursor-pointer text-gray-300 hover:text-green-400 '>
             Login
@@ -161,7 +170,7 @@ function SideNav() {
         </div> */}
       </nav>
 
-      <div className=' fixed block lg:hidden z-40 w-full bg-slate-50'>
+      {/* <div className=' fixed block lg:hidden z-40 w-full bg-slate-50'>
         <div className=' pl-8 py-2 border-b-2 flex items-center justify-between'>
           <Logo />
           <div className=' pr-4'>
@@ -174,7 +183,7 @@ function SideNav() {
           </div>
         </div>
 
-      </div>
+      </div> */}
 
     </>
   )
