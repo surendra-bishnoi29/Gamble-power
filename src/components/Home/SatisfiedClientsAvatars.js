@@ -2,9 +2,9 @@ import React from 'react';
 
 const SatisfiedClients = () => {
     return (
-        <div className="flex flex-col justify-between bg-white/20 backdrop-blur-lg border-b  rounded-xl px-6 pt-8 pb-9 shadow-lg max-w-[200px] text-center relative">
+        <div className="flex flex-col justify-between bg-white/20 backdrop-blur-lg border-b w-full max-w-[400px]  rounded-xl px-6 pt-8 pb-9 shadow-lg lg:max-w-[200px] text-center relative">
             {/* Avatar Group */}
-            <div className="flex justify-center -space-x-4">
+            <div className="flex justify-start -space-x-4">
                 <img
                     className="w-10 h-10 border-2 border-white rounded-full"
                     src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
