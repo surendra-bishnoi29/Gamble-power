@@ -19,13 +19,13 @@ import { getVolunteers, updateVolunteer } from "../Actions/volunteerActions";
 
 
 const ModifyVolunteer = (props) => {
-    console.log("CreateUser", props)
+    //console.log("CreateUser", props)
     const navigate = useNavigate();
     const uriLocation = useLocation();
     const [searchParams] = useSearchParams();
     const mode = searchParams.get('mode');
     const userId = searchParams.get('id');
-    console.log("mode", mode, "userId", userId)
+    //console.log("mode", mode, "userId", userId)
 
 
     
@@ -60,7 +60,7 @@ const ModifyVolunteer = (props) => {
             //     setState(intity.state);
             //     setDistrict(intity.location);
             //     setImage(intity.image);
-            //     console.log("intity", intity)
+            //     //console.log("intity", intity)
             // } else {
             //     setMessage("User not found");
             // }
@@ -77,11 +77,11 @@ const ModifyVolunteer = (props) => {
             props?.notification("Unexpected Error", 'error')
         }else{
         let intity
-        console.log("userId", userId, response)
+        //console.log("userId", userId, response)
         response.volunteers.map((i) => {
             if (i.id == userId) {
                 intity = i
-                console.log("found", intity)
+                //console.log("found", intity)
             }
         })
         if (intity) {
@@ -99,7 +99,7 @@ const ModifyVolunteer = (props) => {
             setStatus(intity?.status)
             // setOrganisation(intity.organisation);
             // setImage(intity.image);
-            console.log("intity", intity)
+            //console.log("intity", intity)
         } else {
             setMessage("Volunteer not found");
         }
@@ -114,7 +114,7 @@ const ModifyVolunteer = (props) => {
     const uploadFile = async (file, url) => {
 
         const res = await fetch(url, { method: 'PUT', body: file });
-        console.log(res)
+        //console.log(res)
     
         return res;
     }
@@ -136,7 +136,7 @@ const ModifyVolunteer = (props) => {
         // let tempUrl = ''
         // if(file)
         // {   
-        //     console.log("file found in handleSubmit", file)
+        //     //console.log("file found in handleSubmit", file)
         //     tempUrl = await generateTempUrl(key)
         //     if (!tempUrl?.url) 
         //         {
@@ -148,9 +148,9 @@ const ModifyVolunteer = (props) => {
         //     const uploadResponse = await uploadFile(file, tempUrl?.url);
         //     if(uploadResponse.statusText == 'OK')
         //     {
-        //         console.log("file uploaded", uploadResponse)
+        //         //console.log("file uploaded", uploadResponse)
         //         imgUrl = removeQueryParameters(uploadResponse?.url);
-        //         console.log("imgUrl", imgUrl)
+        //         //console.log("imgUrl", imgUrl)
         //         setImage(imgUrl);
         //     }
         //     else{
@@ -182,10 +182,10 @@ const ModifyVolunteer = (props) => {
         //     sendUser.image = image;
         // }
 
-        console.log("sendUser", sendUser)
+        //console.log("sendUser", sendUser)
         if (mode == 'edit') {
            const response = await updateVolunteer(userId, sendUser);
-           console.log('response after update', response)
+           //console.log('response after update', response)
            if( !response?.status){
             props?.notification(response?.error, 'error');
             }
@@ -203,7 +203,7 @@ const ModifyVolunteer = (props) => {
         //     onClose();
         // }
         // }
-        console.log('submit');
+        //console.log('submit');
     }
 
 
@@ -312,15 +312,15 @@ export default ModifyVolunteer;
 //     const [image, setImage] = useState('')
 //     const handleFile = (e) => {
 //         const file = e.target.files[0];
-//         console.log("file here",e)
-//         console.log(URL.createObjectURL(file))
+//         //console.log("file here",e)
+//         //console.log(URL.createObjectURL(file))
 //         setImage(URL.createObjectURL(file))
 //     }
 //   return (
 //     <>
 //     <Modal>
 //         <Card
-//         header={"title"} close={()=>console.log('close')}
+//         header={"title"} close={()=>//console.log('close')}
 //         >
 //             <UploadImage image={image} handleFile={handleFile}/>
 //             {/* <UploadUserImage image={image} handleFile={handleFile}/> */}

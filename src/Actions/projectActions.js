@@ -4,7 +4,7 @@ import { deleteApiWrapper, getApiWrapper, postApiWrapper, putApiWrapper } from "
 const base_url = 'https://backend-jalsanrakshanam.thembs.in'
 
 export const createProject = async (data) => {
-    console.log("from actions of create project", data)
+    //console.log("from actions of create project", data)
     const response = await postApiWrapper(`${base_url}/api/projects/create-project`, data);
     return response;
 }

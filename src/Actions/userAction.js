@@ -15,7 +15,7 @@ const base_url = 'http://34.18.95.25'
 
 export const getAllUsers = async() => {
   const response = await getApiWrapper(`${base_url}/users/get-users`);
-  console.log('getAllUsers', response);
+  //console.log('getAllUsers', response);
   return response;
 };
 
@@ -23,7 +23,7 @@ export const getAllUsers = async() => {
 
 export const createUser = (user) => {
   const response = postApiWrapper(`${base_url}/users/create-user`, user);
-  console.log('createUser', response);
+  //console.log('createUser', response);
   return response;
 }
 

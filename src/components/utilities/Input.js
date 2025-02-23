@@ -12,7 +12,7 @@ const Input = (props) => {
                 disabled = {props.disabled}
                 id={props.id} 
                 value={props.value}
-                onChange={(e)=>{console.log("type: ",props?.type?props?.type:"text", e.target.value); props.onChange(e.target.value)}}
+                onChange={(e)=>{ props.onChange(e.target.value)}}
                 className={`block px-2.5 pb-2.5 pt-2 ${width} text-gray-900 bg-transparent ${rounded}  border border-blue-600 placeholder-shown:border-gray-500  dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 hover:border-gray-500 focus:border-blue-600 placeholder-transparent  peer`} placeholder="placeholder" />
                 <label 
                 htmlFor={props.id}

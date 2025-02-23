@@ -10,7 +10,7 @@ function SideBarItem(props) {
     const { appState, setAppState, } = useContext(ContextApp);
     // const navigate = useNavigate()
     const location = useLocation()
-    console.log(item, "apart from item ", location)
+    //console.log(item, "apart from item ", location)
 
     const scrollToTop = () => {
       if(setSideBarModal){

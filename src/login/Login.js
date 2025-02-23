@@ -31,7 +31,7 @@ export default function Login() {
     const handleSubmit = (e) => {
 
         e.preventDefault();
-        console.log(username, password);
+        //console.log(username, password);
         authenticateUser();
 
     }
@@ -48,19 +48,19 @@ export default function Login() {
             }
     
             const response = await loginUser({ username: trimmedUsername, password });
-            console.log("login response", response);
+            //console.log("login response", response);
     
             if (response?.token) {
                 setItem('role', response?.role);
                 setItem('Token', response?.token);
                 setItem('loggedIn', true);
                 setLoggedIn(true);
-                console.log("again i am here");
+                //console.log("again i am here");
                 setRole(response?.role)
                 setLoginModal(false)
                 // if (response?.role === 'Admin') {
                 //     setRole('Admin');
-                //     console.log("admin");
+                //     //console.log("admin");
                 //     navigate('/');
                 // } else {
                 //     setRole('User');

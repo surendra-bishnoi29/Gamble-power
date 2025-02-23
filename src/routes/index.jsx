@@ -7,7 +7,7 @@ import { getItem } from "../login/storageService";
 
 const role = getItem('role');
 // const role = "Admin"
-console.log("role", role);
+//console.log("role", role);
 
 export const generateRoute = (routes) => {
   return routes.map((route, index) => 

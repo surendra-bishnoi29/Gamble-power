@@ -249,7 +249,7 @@ export function AvatarCell({ value, column, row }) {
                         : 
                         <a 
                         href = {`/Organisations/users?id=${row.original._id}`}
-                        onClick={()=>{console.log("clicked")}}
+                        onClick={()=>{//console.log("clicked")}}
                         >
                             {value}
                         </a>
@@ -270,7 +270,7 @@ export function AvatarCell({ value, column, row }) {
                         : 
                         <a 
                         href = {`/files?id=${row.original._id}`}
-                        onClick={()=>{console.log("clicked")}}
+                        onClick={()=>{//console.log("clicked")}}
                         >
                           {value?.length <= 20 ? value : value.slice(0, 20) + '...'}
                         </a>
@@ -332,7 +332,7 @@ export function ArrayPills({ value, column, row }){
 
 
 export function objectRenderColumnvalues ({ value, column, row }){
-    console.log("Here is the column and row to see possibilities ", value, column, row)
+    //console.log("Here is the column and row to see possibilities ", value, column, row)
     const accessor = column?.diplayValue;
     return (
         <div className=" text-xs text-gray-500">

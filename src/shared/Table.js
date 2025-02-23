@@ -25,7 +25,7 @@ function Table(props) {
 
     const {role} = useContext(ContextApp);
 
-    console.log("data from table", data)
+    //console.log("data from table", data)
 
     const navigate = useNavigate();
 

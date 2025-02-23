@@ -12,7 +12,7 @@ import RedirctWithQuery from "./login/RedirctWithQuery";
 // const role = getItem('role');
 
 function App() {
-  // console.log("routes", routes)
+ 
   const {role } = useContext(ContextApp) || "Public"
  
   const [routes, setRoutes] = useState()
@@ -28,9 +28,9 @@ function App() {
       }
       return route;
     });
-    console.log("n_appRoutes", n_appRoutes, role);
+   
     const temp = generateRoute(n_appRoutes);
-    console.log("temp", temp)
+    
     if(role == null){
       const t = generateRoute(appRoutes);
       setRoutes(t)
@@ -39,7 +39,7 @@ function App() {
     setRoutes(temp);
   }
 
-  console.log("hii host is here", window.location.hostname)
+  
 
 
   return (

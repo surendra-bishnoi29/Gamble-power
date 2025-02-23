@@ -3,12 +3,12 @@ import SolutionCard from './SolutionCard'
 
 function Services() {
     const serviceList = [
-        {title: 'Solar Power Plant EPC (Engineering, Procurement, Construction)', image:'s1.jpg', description: 'Comprehensive end-to-end solutions for solar power plant development, including design, procurement, and construction.'},
-        {title: 'Operations and Maintenance (O&M)', image:'onm.avif', description: 'Long-term maintenance services ensuring optimal performance and efficiency of solar power plants.'},
-        {title: 'Consultancy for Solar Power Development', image:'consultancy.jpg', description: 'Expert advisory services for the design and execution of solar power infrastructure.'},
-        {title: 'Operation & Maintenance of Grid Substations', image:'grid.jpg', description: 'Managing the smooth operation and maintenance of grid substations to ensure uninterrupted power distribution.'},
-        {title: 'Transmission & Distribution Infra Development', image:'transmission.jpg', description: 'Development of robust transmission and distribution infrastructure for efficient power transmission.'},
-        {title: 'Electrical Fault Rectification', image:'fault-check.jpg', description: 'Specialized in resolving electrical faults under government contracts, ensuring the reliability of electrical infrastructure'},
+        {title: 'Solar Power Plant EPC (Engineering, Procurement, Construction)', image:'https://jaljivnam.s3.ap-south-1.amazonaws.com/gamble-dump/public/s1.jpg', description: 'Comprehensive end-to-end solutions for solar power plant development, including design, procurement, and construction.'},
+        {title: 'Operations and Maintenance (O&M)', image:'https://jaljivnam.s3.ap-south-1.amazonaws.com/gamble-dump/public/onm.avif', description: 'Long-term maintenance services ensuring optimal performance and efficiency of solar power plants.'},
+        {title: 'Consultancy for Solar Power Development', image:'https://jaljivnam.s3.ap-south-1.amazonaws.com/gamble-dump/public/consultancy.jpg', description: 'Expert advisory services for the design and execution of solar power infrastructure.'},
+        {title: 'Operation & Maintenance of Grid Substations', image:'https://jaljivnam.s3.ap-south-1.amazonaws.com/gamble-dump/public/grid.jpg', description: 'Managing the smooth operation and maintenance of grid substations to ensure uninterrupted power distribution.'},
+        {title: 'Transmission & Distribution Infra Development', image:'https://jaljivnam.s3.ap-south-1.amazonaws.com/gamble-dump/public/transmission.jpg', description: 'Development of robust transmission and distribution infrastructure for efficient power transmission.'},
+        {title: 'Electrical Fault Rectification', image:'https://jaljivnam.s3.ap-south-1.amazonaws.com/gamble-dump/public/fault-check.jpg', description: 'Specialized in resolving electrical faults under government contracts, ensuring the reliability of electrical infrastructure'},
     ]
   return (
     <div className=' flex flex-col justify-center  w-full gap-5'>
