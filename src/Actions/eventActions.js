@@ -4,7 +4,7 @@ import { deleteApiWrapper, getApiWrapper, postApiWrapper, putApiWrapper } from "
 const base_url = 'https://backend-jalsanrakshanam.thembs.in'
 
 export const createEvent = async (data) => {
-    console.log("from actions of create event", data)
+   
     const response = await postApiWrapper(`${base_url}/api/events/create-event`, data);
     return response;
 }

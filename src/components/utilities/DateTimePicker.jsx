@@ -1,9 +1,9 @@
 import React from 'react'
 
 function DateTimePicker(props) {
-    // console.log("props", props)
+    // //console.log("props", props)
     const handleChange = (e) => {
-        // console.log(typeof (e.target.value))
+        // //console.log(typeof (e.target.value))
         props.onChange(e.target.value)
     }
 

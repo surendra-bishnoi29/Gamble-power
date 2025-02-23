@@ -36,7 +36,7 @@ function SideNav() {
   // const getUser = async () => {
   //   setLoading(true);
   //   const response = await getCurrentUser();
-  //   console.log("current user from side nav", response)
+  //   //console.log("current user from side nav", response)
   //   if (response?.user) {
   //     setCurrentUser(response.user);
   //   }
@@ -73,9 +73,9 @@ function SideNav() {
       }
       return route;
     });
-    console.log("n_appRoutes in side nav", n_appRoutes)
+    //console.log("n_appRoutes in side nav", n_appRoutes)
     setRoutes(n_appRoutes);
-    console.log("role in side nav", role)
+    //console.log("role in side nav", role)
   }, [role])
 
 

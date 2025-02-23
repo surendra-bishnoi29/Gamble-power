@@ -4,7 +4,7 @@ const DropDown = (props) => {
     const {Actions} = props
 
     const iconAction =(action)=>{
-       console.log("action", action)
+       //console.log("action", action)
         action.action(action.actionName, props.row.original._id, props.row.original)
         props.closeActionBar();
     }

@@ -37,7 +37,7 @@ function CreateVolunteer(props) {
   const uploadFile = async (file, url) => {
 
     const res = await fetch(url, { method: 'PUT', body: file });
-    console.log(res)
+    //console.log(res)
 
     return res;
   }
@@ -64,7 +64,7 @@ function CreateVolunteer(props) {
     const res = await registerVolunteer(data)
 
     if (res.status) {
-      console.log("success")
+      //console.log("success")
       setSuccessMsg("success")
     }else{
       setErrorMsg(res?.error ?? "Something went wrong")

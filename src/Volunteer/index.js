@@ -21,7 +21,7 @@ import { deleteVolunteer, getVolunteers } from '../Actions/volunteerActions';
 const CreateUser = loadable(() => import('./ModifyVolunteer'));
 // const CreateUser = <div>hii</div>
 // const role = getItem('role');
-// console.log("role in all-users", role)
+// //console.log("role in all-users", role)
 function VolunteerList(props) {
 
   const { listReload, setListReload } = props
@@ -33,7 +33,7 @@ function VolunteerList(props) {
 
   //   navigate('/login')
   // }
-  // console.log("role in all-users", role)
+  // //console.log("role in all-users", role)
   const {role} = useContext(ContextApp)
   const isDesktop = useMediaQuery({ minWidth: 1024 });
   const isTablet = useMediaQuery({ minWidth: 640, maxWidth: 1023 });
@@ -50,7 +50,7 @@ function VolunteerList(props) {
   const memoData = useMemo(() => { return data }, [data])
 
   useEffect(() => {
-    console.log("location", location)
+    //console.log("location", location)
     getAllusersList();
   }, [location, listReload, role])
 
@@ -60,7 +60,7 @@ function VolunteerList(props) {
     // This function call API function from ACTIONS.
     setLoading(true)
     const response = await getVolunteers();
-    console.log("response to check token ", response)
+    //console.log("response to check token ", response)
     if (response) {
       // if(response.message == 'Token is invalid!')
       //   {
@@ -79,7 +79,7 @@ function VolunteerList(props) {
   }
 
   useEffect(()=>{
-    console.log("checking role", role )
+    //console.log("checking role", role )
     // if(role != 'Admin'){
     //   navigate('/files')
     // }
@@ -97,9 +97,9 @@ function VolunteerList(props) {
       if (confirmation) {
       // const newData = kData.filter((d1)=>{return !(d1.id==dataId)});
       // const temp_user = data.find((d1) => { return d1._id == dataId });
-      // console.log("temp_user", temp_user)
+      // //console.log("temp_user", temp_user)
       // const fileName = temp_user?.name + '-' + temp_user?._id;
-      // console.log("fileName", fileName)
+      // //console.log("fileName", fileName)
       const response = await deleteVolunteer(dataId);
 
       if (response?.status) {

@@ -16,7 +16,7 @@ function MainLayout(props) {
   const logged_in = getItem('loggedIn');
   const navigate = useNavigate();
   const { loggedIn = true,   role = "Public", donateModal, setDonateModal, volunteerModal, setVolunteerModal } = useContext(ContextApp);
-  // console.log("currwnt user from main layout", getItem('currentUser'))
+  // //console.log("currwnt user from main layout", getItem('currentUser'))
   // const {role} = useContext(ContextApp);
 
   const isDesktop = useMediaQuery({ minWidth: 1024 });
@@ -38,11 +38,11 @@ function MainLayout(props) {
 
   useEffect(() => {
     if (role == 'Admin') {
-      console.log("not logged in", role)
+      //console.log("not logged in", role)
     }
     else {
       // navigate('/files')
-      console.log("logged in", loggedIn)
+      //console.log("logged in", loggedIn)
     }
     if (!loggedIn) {
       // navigate('/login')

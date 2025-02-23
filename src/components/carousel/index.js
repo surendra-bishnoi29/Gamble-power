@@ -11,7 +11,7 @@ function Carousel(props) {
        
         const interval = setInterval(() => {
             nextSlide();
-            console.log("current index : ", currentIndex)
+            //console.log("current index : ", currentIndex)
         }, 1000); // 3 seconds interval
 
         return () => clearInterval(interval);// Clear interval on component unmount

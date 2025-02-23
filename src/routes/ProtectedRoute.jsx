@@ -6,10 +6,10 @@ import { ContextApp } from '../ContextAPI';
 const ProtectedRoute = ({component:Component}) => {
     // const user = useSelector((state) => state.user);
     const {loggedIn} = useContext(ContextApp);
-    console.log("rendered")
+    //console.log("rendered")
     useEffect(() => {
        
-        console.log(loggedIn)
+        //console.log(loggedIn)
     }, [loggedIn])
 
 

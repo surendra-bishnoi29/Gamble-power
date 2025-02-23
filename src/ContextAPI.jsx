@@ -29,7 +29,7 @@ const ContextAppProvider = props => {
   },[loggedIn])
 
   const login = () =>{
-    console.log("login true")
+   
     setLoggedIn(true);
     // setItem('loggedIn', true);
     

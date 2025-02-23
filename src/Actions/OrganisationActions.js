@@ -15,7 +15,7 @@ const base_url = 'http://34.18.95.25'
 
 export const getAllOrganisations = async() => {
   const response = await getApiWrapper(`${base_url}/get-organisations`);
-  console.log('getAllOrganisations', response);
+  //console.log('getAllOrganisations', response);
   return response;
 };
 
@@ -23,7 +23,7 @@ export const getAllOrganisations = async() => {
 
 export const createOrganisation = async (org) => {
   const response = await postApiWrapper(`${base_url}/create-org`, org);
-  console.log('createOrganisation', response);
+  //console.log('createOrganisation', response);
   return response;
 }
 

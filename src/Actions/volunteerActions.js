@@ -4,7 +4,7 @@ import { deleteApiWrapper, getApiWrapper, postApiWrapper, putApiWrapper } from "
 const base_url = 'https://backend-jalsanrakshanam.thembs.in'
 
 export const registerVolunteer = async (data) => {
-    console.log("from actions of  register volunteer", data)
+    //console.log("from actions of  register volunteer", data)
     const response = await postApiWrapper(`${base_url}/api/volunteers/register-volunteer`, data);
     return response;
 }
